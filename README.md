@@ -2,7 +2,7 @@
 
 This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context" ECCV 2022.
 
-Now only the inference codes are available. We will further complete the codes and materials soon. For any questions, please email to me. Thanks a lot for your interest. 
+Now only the inference codes are available. We will further test our codes and complete them soon. For any questions, please email to me. Thanks a lot for your interest. 
 
 ## Environment
 My environment can be refered as follows:
