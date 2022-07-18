@@ -356,14 +356,11 @@ class StructureGen(nn.Module):
         x = self.deconv2(x)
         x = torch.cat([self.lateral_connection2(con_x3), x], dim=1)
         x = self.deconv3(x)
-        xo1 = x
         x = torch.cat([self.lateral_connection3(con_x2), x], dim=1)
         x = self.deconv4(x)
-        xo2 = x
         x = torch.cat([self.lateral_connection4(con_x1), x], dim=1)
-        x = self.deconv5(x)
-        x_o_unet = x       
-        return x_o_unet             
+        x = self.deconv5(x) 
+        return x            
 
 # original D
 class D_Net(nn.Module):
