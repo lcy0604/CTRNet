@@ -177,7 +177,7 @@ class ConvTD_SPADE_refine(nn.Module):
         self.prejection_head1 = nn.Conv2d(128,3,kernel_size=1)
         self.prejection_head2 = nn.Conv2d(64,3,kernel_size=1)
 
-        # Encoder semantic branch
+        # Encoder semantic branch   from SPL
         self.encoder_prePad_sm = nn.ReflectionPad2d(3)
         self.encoder_conv1_sm = nn.Conv2d(in_channels=input_channels+1, out_channels=64, kernel_size=7, padding=0)
         self.encoder_relu1_sm = nn.LeakyReLU(0.1)
@@ -243,7 +243,7 @@ class ConvTD_SPADE_refine(nn.Module):
         ef2 = self.encoder_conv2(ef2)
         ### encoder ###
 
-        ### semantic encoder ###
+        ### semantic encoder ###   from SPL
         x_sm = self.encoder_sm(torch.cat((x_input, mask), 1))
         x_sm_skip = self.encoder_sm_out(x_sm)
         local_features = []
