@@ -229,8 +229,7 @@ class ConvTD_SPADE_refine(nn.Module):
         
 
     def forward(self, x, mask, soft_mask, coarse_out):
-        x_input = x #* (1 - soft_mask) + soft_mask
-        # input mask: 1 for hole, 0 for valid
+        x_input = x 
 
         ### encoder ###
         # import pdb;pdb.set_trace()
