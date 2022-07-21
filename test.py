@@ -8,7 +8,6 @@ import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch.backends.cudnn as cudnn
 from dataset import build_dataloader
 import pdb
 import socket
