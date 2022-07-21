@@ -50,7 +50,6 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
         --img_flist your/test/flist/ \
         --model your/model/weights --save_path ./results --save \
 ```
-You can download one of our retrained model weights [Here](https://drive.google.com/file/d/1wcMYsoM7eLMX9aU8QvTH--b52C5Y4JaW/view?usp=sharing).
 
 ## Acknowledge
 
