@@ -55,6 +55,15 @@ CUDA_VISIBLE_DEVICES=0 python test.py \
 
 The repository is benefit a lot from [SPL](https://github.com/WendongZh/SPL) and [DETR](https://github.com/facebookresearch/detr). Thanks a lot for their excellent work.
 
+## Citation
+If you find our method or dataset useful for your reserach, please cite:
+```
+@ARTICLE{CTRNet,
+  author     ={Liu, Chongyu and Jin, Lianwen and Liu, Yuliang and Luo, canjie and Chen, Bangdong and Guo, Fengjun and Ding, Kai},
+  journal    ={ECCV},
+  title      ={Don’t Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context},
+  year       ={2022},}
+```
 
 ## Feedback
 Suggestions and opinions of our work (both positive and negative) are greatly welcome. Please contact the authors by sending email to Chongyu Liu([liuchongyu1996@gmail.com](mailto:liuchongyu1996@gmail.com)). For commercial usage, please contact Prof. Lianwen Jin via ([eelwjin@scut.edu.cn](mailto:eelwjin@scut.edu.cn)).
