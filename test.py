@@ -60,8 +60,6 @@ def eval(device):
             mask_batch = soft_mask
 
         with torch.no_grad():
-            mask_512 =  mask_batch #F.interpolate(mask_batch, 512)
-            img_512_masked = img_512_batch * (1.0 - mask_batch) + mask_batch
 
             structure_output, out1, out2, prediction, img_f_pred = model.generator(img_512_batch, gt_text.float().unsqueeze(0), soft_mask, structure_im)
 
