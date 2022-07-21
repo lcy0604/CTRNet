@@ -2,7 +2,7 @@
 
 This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context".
 
-Now only the inference codes are available. We will further test our codes and complete them soon. For any questions, please email to me. Thank you for your interest. 
+The inference codes are available. We will further test our codes and provide our model weights soon. For any questions, please email to me. Thank you for your interest. 
 
 ## Environment
 My environment can be refered as follows:
@@ -22,7 +22,7 @@ python setup.py install
 ## Datasets
 We use [SCUT-EnsText](https://github.com/HCIILAB/SCUT-EnsText) and [SCUT-Syn](https://github.com/HCIILAB/Scene-Text-Removal).  
 
-After downloading, run [`flist.py`](flist.py) to generate train and test set file lists. 
+After downloading, run [`flist.py`](flist.py) to generate data lists. 
 
 ```bash
 mkdir datasets
