@@ -8,7 +8,6 @@ import numpy as np
 from torchvision import models
 
 import cv2
-import numpy 
 from PIL import Image
 
 from module.transformer import TransformerEncoderLayer
