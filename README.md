@@ -1,6 +1,6 @@
 # CTRNet
 
-This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context".
+This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context". [paper](https://arxiv.org/abs/2207.10273)
 
 The inference codes are available. We will further test our codes and provide our model weights soon. For any questions, please email to me. Thank you for your interest. 
 
