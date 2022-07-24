@@ -381,7 +381,7 @@ class Dataset(torch.utils.data.Dataset):
             gt_path = self.data[index].replace('all_images', 'all_gts').replace('jpg', 'txt')
             bboxes = get_anno(img, gt_path)
 
-        ##################### test #####################
+        ##################### test #####################  you can also use gt files for testing directly
         else:
             gt_path = self.data[index].replace('all_images', 'detect_re').replace('jpg', 'txt')
             bboxes = get_anno(img, gt_path)
