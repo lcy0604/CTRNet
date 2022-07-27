@@ -2,7 +2,7 @@
 
 This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context". [paper](https://arxiv.org/abs/2207.10273) [supple](https://drive.google.com/file/d/1PwiqIzv4jPYOmZLIoEoZSJpc1VqQcPWE/view?usp=sharing)
 
-The inference codes are available. You can download one of our retrained model weights [Here](https://drive.google.com/file/d/1wcMYsoM7eLMX9aU8QvTH--b52C5Y4JaW/view?usp=sharing).
+The inference codes are available. You can download one of our retrained model weights [Here](https://drive.google.com/file/d/1wcMYsoM7eLMX9aU8QvTH--b52C5Y4JaW/view?usp=sharing) （It can attain 35.14 in PSNR).
 
 For any questions, please email to me. Thank you for your interest. 
 
