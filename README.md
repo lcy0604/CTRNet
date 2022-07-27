@@ -4,7 +4,7 @@ This repository is the implementation of "Don't Forget Me: Accurate Background R
 
 The inference codes are available. You can download one of our retrained model weights [Here](https://drive.google.com/file/d/1wcMYsoM7eLMX9aU8QvTH--b52C5Y4JaW/view?usp=sharing).
 
-(It can attain 35.14 in PSNR with [skimage.metrics.peak_sihnal_noise_ratio]()).
+(It can attain 35.14 in PSNR with [skimage.metrics.peak_signal_noise_ratio]()).
 
 For any questions, please email to me. Thank you for your interest. 
 
