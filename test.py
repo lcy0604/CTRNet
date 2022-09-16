@@ -1,3 +1,4 @@
+from __future__ import print_function
 import argparse
 from math import log10
 import numpy as np
@@ -7,6 +8,7 @@ import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.backends.cudnn as cudnn
 from dataset import build_dataloader
 import pdb
 import socket
@@ -43,24 +45,25 @@ def visual(image):
 def eval(device):
     model.eval()
     for batch in testing_data_loader:
-        img_512_batch, gt_batch, structure_im, structure_lbl, mask_batch, gt_text, soft_mask, index, name = batch
-        mask_batch = 1 - mask_batch
+        img_512_batch, gt_batch, structure_im, structure_lbl, gt_text, soft_mask, index, name = batch
         t_io2 = time.time()
         if cuda:
             gt_batch = gt_batch.cuda(device)
             img_512_batch = img_512_batch.cuda(device)
-            mask_batch = mask_batch.cuda(device)
-            mask_batch = torch.mean(mask_batch, 1, keepdim=True)
+
             gt_text = gt_text.cuda(non_blocking=True)
+            gt_text = gt_text.unsqueeze(1).cuda(non_blocking=True)
 
             soft_mask = soft_mask.unsqueeze(1).cuda(non_blocking=True)
-
+            # import pdb;pdb.set_trace()
             structure_im = structure_im.cuda(non_blocking=True)
             mask_batch = soft_mask
 
         with torch.no_grad():
+            mask_512 =  mask_batch #F.interpolate(mask_batch, 512)
+            img_512_masked = img_512_batch * (1.0 - mask_batch) + mask_batch
 
-            structure_output, out1, out2, prediction, img_f_pred = model.generator(img_512_batch, gt_text.float().unsqueeze(0), soft_mask, structure_im)
+            structure_output, out1, out2, prediction, img_f_pred = model.generator(img_512_batch, gt_text.float(), soft_mask, structure_im)
 
             withMask_prediction = prediction * mask_batch + img_512_batch * (1 - mask_batch)
             output = withMask_prediction
