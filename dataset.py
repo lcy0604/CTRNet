@@ -339,41 +339,24 @@ class Dataset(torch.utils.data.Dataset):
             structure_lbl = structure_im
         ### structure ###
 
-        # load mask
-        mask = self.load_mask(img, index)
-        # import pdb;pdb.set_trace()
-
         gt_text, soft_mask = self.load_detection_anno(img, index)
 
         if self.training:
-            imgs = [img, gt, mask, soft_mask, structure_im, structure_lbl]
+            imgs = [img, gt, gt_text, soft_mask, structure_im, structure_lbl]
             imgs = random_horizontal_flip(imgs)
             imgs = random_rotate(imgs) 
-            img, gt, mask, soft_mask, structure_im, structure_lbl = imgs[0], imgs[1], imgs[2], imgs[3], imgs[4], imgs[5] 
+            img, gt, gt_text, soft_mask, structure_im, structure_lbl = imgs[0], imgs[1], imgs[2], imgs[3], imgs[4], imgs[5] 
 
         img = self.to_tensor(img)
         gt = self.to_tensor(gt)
 
         structure_im = self.to_tensor(structure_im)
         structure_lbl = self.to_tensor(structure_lbl)
-        
-        mask = self.to_tensor(mask)
 
         gt_text = torch.from_numpy(gt_text).long()
         soft_mask = torch.from_numpy(soft_mask)
 
-        return img, gt, structure_im, structure_lbl, mask, gt_text, soft_mask, index, name
-
-    def load_mask(self, img, index):
-        imgh, imgw = img.shape[0:2]
-
-        # external
-        if self.training:
-            mask = cv2.imread(self.data[index].replace('all_images', 'mask'))
-        else:   # in test mode, there's a one-to-one relationship between mask and image; masks are loaded non random
-            mask = cv2.imread(self.data[index].replace('all_images', 'mask'))  # mask must be 255 for hole in this InpaintingModel
-        # mask = (mask > 0).astype(np.uint8) * 255       # threshold due to interpolation
-        return mask
+        return img, gt, structure_im, structure_lbl, gt_text, soft_mask, index, name
 
     ### for detection ###
     def load_detection_anno(self, img, index):
@@ -381,9 +364,9 @@ class Dataset(torch.utils.data.Dataset):
             gt_path = self.data[index].replace('all_images', 'all_gts').replace('jpg', 'txt')
             bboxes = get_anno(img, gt_path)
 
-        ##################### test #####################  you can also use gt files for testing directly
+        ##################### test #####################
         else:
-            gt_path = self.data[index].replace('all_images', 'detect_re').replace('jpg', 'txt')
+            gt_path = self.data[index].replace('all_images', 'all_gts').replace('jpg', 'txt')
             bboxes = get_anno(img, gt_path)
         ##################### test #####################
 
