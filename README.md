@@ -12,7 +12,7 @@ For any questions, please email to me. Thank you for your interest.
 My environment can be refered as follows:
 - Python 3.6.9
 - PyTorch 1.3 (1.3+ is also work)
-- [Inplace_Abn](https://github.com/mapillary/inplace_abn)
+- [Inplace_Abn](https://github.com/mapillary/inplace_abn) （Only for training, the pretrained model can be downloaded at [ASL](https://github.com/Alibaba-MIIL/ASL/blob/main/MODEL_ZOO.md))
 - torchlight 
 - Polygon
 - shapely
