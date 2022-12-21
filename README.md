@@ -1,5 +1,5 @@
 # CTRNet
-
+<a href="https://huggingface.co/spaces/SWHL/CTRNetDemo"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face demo-blue"></a><br/>
 This repository is the implementation of "Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context". [paper](https://arxiv.org/abs/2207.10273) [supple](https://drive.google.com/file/d/1PwiqIzv4jPYOmZLIoEoZSJpc1VqQcPWE/view?usp=sharing)
 
 The inference codes are available.
@@ -14,7 +14,7 @@ My environment can be refered as follows:
 - PyTorch 1.3 (1.3+ is also work)
 - [Inplace_Abn](https://github.com/mapillary/inplace_abn) （Only for training, the pretrained model can be downloaded at [ASL](https://github.com/Alibaba-MIIL/ASL/blob/main/MODEL_ZOO.md), which is trained on OpenImage)
 - torchlight
-- Polygon
+- Polygon3
 - shapely
 - skimage
 
